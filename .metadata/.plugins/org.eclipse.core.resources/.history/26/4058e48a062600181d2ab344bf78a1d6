@@ -1,0 +1,5 @@
+package examples.ejb.interceptors;
+
+public class EmployeeClassLogger {
+
+}

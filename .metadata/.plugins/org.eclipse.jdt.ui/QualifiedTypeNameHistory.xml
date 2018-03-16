@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="examples.ejb.basic.Employee"/>
+    <fullyQualifiedTypeName name="javax.naming.Context"/>
+    <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
+    <fullyQualifiedTypeName name="examples.ejb.basic.EmployeeLocal"/>
+    <fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
+    <fullyQualifiedTypeName name="javax.annotation.PreDestroy"/>
+    <fullyQualifiedTypeName name="javax.ejb.PostActivate"/>
+    <fullyQualifiedTypeName name="javax.ejb.PrePassivate"/>
+    <fullyQualifiedTypeName name="javax.ejb.Remove"/>
+    <fullyQualifiedTypeName name="javax.ejb.EJB"/>
+    <fullyQualifiedTypeName name="examples.ejb.basic.stateful.EmployeeLocal"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="javax.interceptor.Interceptors"/>
+    <fullyQualifiedTypeName name="examples.ejb.interceptors.EmployeeLogger"/>
+    <fullyQualifiedTypeName name="examples.ejb.interceptors.EmployeeClassLogger"/>
+    <fullyQualifiedTypeName name="javax.interceptor.AroundInvoke"/>
+    <fullyQualifiedTypeName name="javax.interceptor.InvocationContext"/>
+</qualifiedTypeNameHistroy>

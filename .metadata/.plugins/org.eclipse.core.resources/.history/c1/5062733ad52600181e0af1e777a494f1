@@ -1,0 +1,5 @@
+package examples.ejb.ics;
+
+public class Movie {
+
+}

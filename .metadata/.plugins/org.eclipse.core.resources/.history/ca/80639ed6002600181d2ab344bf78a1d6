@@ -1,0 +1,80 @@
+package examples.ejb.client;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import examples.ejb.basic.Employee;
+import examples.ejb.basic.EmployeeLocal;
+
+/**
+ * Servlet implementation class EmployeeServlet
+ */
+@WebServlet("/EmployeeServlet")
+public class EmployeeServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public EmployeeServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		/***************** FIRST PRINT ******************/
+		// PrintWriter out = response.getWriter();
+		// out.println("<!DOCTYPE html>");
+		// out.println("<html>");
+		// out.println("<head><title>Stateless Employee</title>");
+		// out.println("<meta charset=\"ISO-8859-1\"></head>");
+		// out.println("<body>");
+		// out.println("EmployeeServlet fungerar!");
+		// out.println("</body></html>");
+
+		/************** SECOND PRINTOUT *****************/
+
+		PrintWriter out = response.getWriter();
+		String beanInterface = "Local";
+		String bean = Employee.class.getCanonicalName();
+		// See JNDI NAME I Server console
+		String JNDIName = "java:app/StatelessEJBProject/Employee!" + bean + beanInterface;
+		out.println("<!DOCTYPE html>");
+		out.println("<html>");
+		out.println("<head><title>Stateless Employee</title>");
+		out.println("<meta charset=\"ISO-8859-1\"></head>");
+		out.println("<body>");
+		out.println("<h3>Bean name: " + bean + "</h3>" + "<br>");
+		out.println("<h3>Bean Interface: " + beanInterface + "</h3>" + "<br>");
+		out.println("<h3>JNDI Name: " + JNDIName + "</h3>" + "<br>");
+		
+		try {
+			Context context = new InitialContext();
+			EmployeeLocal e = (EmployeeLocal) context.lookup(JNDIName);
+			if (e != null) {
+				out.println("<h3>Employee skapad !!</h3>" + "<br>");
+				e.setName("Rolke Af Sturup");
+				out.println(e.getName() + "<br>");
+			}
+		} catch (Exception e) {
+			out.println("Exeption kastad." + e.getMessage());
+		}
+		out.println("</body></html>");
+
+	}
+
+}

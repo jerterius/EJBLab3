@@ -1,0 +1,20 @@
+package examples.ejb.basic.stateful;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateful;
+
+/**
+ * Session Bean implementation class Employee
+ */
+@Stateful
+@LocalBean
+public class Employee implements EmployeeRemote, EmployeeLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public Employee() {
+        // TODO Auto-generated constructor stub
+    }
+
+}
